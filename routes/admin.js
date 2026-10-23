@@ -18,8 +18,8 @@ const adminCount = () => db.prepare('SELECT COUNT(*) n FROM admins').get().n;
 
 // Optional: seed the admin from environment variables (recommended on a public server).
 function seedAdminFromEnv() {
-  const email = (process.env.ADMIN_EMAIL || '').trim().toLowerCase();
-  const password = process.env.ADMIN_PASSWORD || '';
+  const email = (process.env.q@mail.ru || '').trim().toLowerCase();
+  const password = process.env.qqqqqqqq || '';
   if (!email || password.length < 10 || adminCount() > 0) return;
   db.prepare('INSERT INTO admins (email, password_hash) VALUES (?, ?)').run(email, bcrypt.hashSync(password, 10));
   console.log(`Platform admin created from environment: ${email}`);
